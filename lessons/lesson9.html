@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 9: Селекторы CSS</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 9: Селекторы CSS</h1>
+        <p>Как выбирать элементы для стилизации</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Типы селекторов:</h3>
+
+        <h3>1. Селектор по тегу</h3>
+        <div class="code-block">
+            <code>p {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+}</code>
+        </div>
+        <p>Выбирает все элементы &lt;p&gt;</p>
+
+        <h3>2. Селектор по классу</h3>
+        <div class="code-block">
+            <code>.my-class {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br>
+}<br><br>
+&lt;div class="my-class"&gt;Текст&lt;/div&gt;</code>
+        </div>
+        <p>Выбирает элементы с классом "my-class"</p>
+
+        <h3>3. Селектор по ID</h3>
+        <div class="code-block">
+            <code>#my-id {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>
+}<br><br>
+&lt;div id="my-id"&gt;Текст&lt;/div&gt;</code>
+        </div>
+        <p>Выбирает элемент с ID "my-id"</p>
+
+        <h3>4. Универсальный селектор</h3>
+        <div class="code-block">
+            <code>* {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;<br>
+}</code>
+        </div>
+        <p>Выбирает ВСЕ элементы на странице</p>
+
+        <h3>5. Комбинированные селекторы</h3>
+        <div class="code-block">
+            <code>/* Несколько селекторов */<br>
+h1, h2, h3 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br>
+}<br><br>
+/* Вложенность */<br>
+div p {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>
+}<br><br>
+/* Прямой потомок */<br>
+div > p {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>
+}</code>
+        </div>
+
+        <h3>Приоритет селекторов:</h3>
+        <div class="example">
+            <p>1. Inline styles - самый высокий приоритет</p>
+            <p>2. ID (#my-id)</p>
+            <p>3. Классы (.my-class)</p>
+            <p>4. Теги (p, div, h1)</p>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте 3 параграфа с разными классами</p>
+            <p>2. Стилизуйте каждый класс своим цветом</p>
+            <p>3. Создайте элемент с ID и сделайте его больше остальных</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

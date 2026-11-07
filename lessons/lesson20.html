@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 20: Операторы</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 20: Операторы</h1>
+        <p>Математика и логика в JavaScript</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Арифметические операторы</h3>
+        <div class="code-block">
+            <code>let a = 10;<br>
+let b = 3;<br><br>
+console.log(a + b); // 13 (сложение)<br>
+console.log(a - b); // 7 (вычитание)<br>
+console.log(a * b); // 30 (умножение)<br>
+console.log(a / b); // 3.333... (деление)<br>
+console.log(a % b); // 1 (остаток от деления)<br>
+console.log(a ** b); // 1000 (возведение в степень)</code>
+        </div>
+
+        <h3>Инкремент и декремент</h3>
+        <div class="code-block">
+            <code>let count = 5;<br>
+count++; // count = 6 (увеличение на 1)<br>
+count--; // count = 5 (уменьшение на 1)<br><br>
+count += 10; // count = 15 (count = count + 10)<br>
+count -= 5; // count = 10 (count = count - 5)<br>
+count *= 2; // count = 20 (count = count * 2)<br>
+count /= 4; // count = 5 (count = count / 4)</code>
+        </div>
+
+        <h3>Операторы сравнения</h3>
+        <div class="code-block">
+            <code>5 == '5' // true (равно, не строгое)<br>
+5 === '5' // false (равно, строгое - рекомендуется!)<br>
+5 != 3 // true (не равно)<br>
+5 !== '5' // true (не равно строгое)<br>
+5 > 3 // true (больше)<br>
+5 < 3 // false (меньше)<br>
+5 >= 5 // true (больше или равно)<br>
+3 <= 5 // true (меньше или равно)</code>
+        </div>
+
+        <div class="example">
+            <p><strong>Важно!</strong> Всегда используй === вместо ==</p>
+            <p>=== проверяет и значение, и тип данных</p>
+        </div>
+
+        <h3>Логические операторы</h3>
+        <div class="code-block">
+            <code>// && (И) - оба условия должны быть true<br>
+let age = 20;<br>
+let hasLicense = true;<br>
+if (age >= 18 && hasLicense) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Можете водить');<br>
+}<br><br>
+// || (ИЛИ) - хотя бы одно условие true<br>
+let isWeekend = true;<br>
+let isHoliday = false;<br>
+if (isWeekend || isHoliday) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Выходной!');<br>
+}<br><br>
+// ! (НЕ) - инверсия<br>
+let isRaining = false;<br>
+if (!isRaining) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Можно гулять');<br>
+}</code>
+        </div>
+
+        <h3>Тернарный оператор</h3>
+        <div class="code-block">
+            <code>// Краткая форма if-else<br>
+let age = 20;<br>
+let status = age >= 18 ? 'взрослый' : 'ребенок';<br>
+console.log(status); // 'взрослый'<br><br>
+// Формула: условие ? значение_если_true : значение_если_false</code>
+        </div>
+
+        <h3>Оператор typeof</h3>
+        <div class="code-block">
+            <code>console.log(typeof 42); // 'number'<br>
+console.log(typeof 'hello'); // 'string'<br>
+console.log(typeof true); // 'boolean'<br>
+console.log(typeof undefined); // 'undefined'<br>
+console.log(typeof null); // 'object' (это баг в JavaScript!)</code>
+        </div>
+
+        <h3>Конкатенация строк</h3>
+        <div class="code-block">
+            <code>let firstName = 'Иван';<br>
+let lastName = 'Петров';<br>
+let fullName = firstName + ' ' + lastName;<br>
+console.log(fullName); // 'Иван Петров'<br><br>
+// Шаблонные строки (лучший способ)<br>
+let greeting = `Привет, ${firstName} ${lastName}!`;<br>
+console.log(greeting); // 'Привет, Иван Петров!'</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте калькулятор с операциями +, -, *, /</p>
+            <p>2. Проверьте четное ли число (используйте % 2)</p>
+            <p>3. Используйте тернарный оператор для проверки возраста</p>
+            <p>4. Создайте систему скидок: если цена > 1000 И есть промокод, то скидка 20%</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

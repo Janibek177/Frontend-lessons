@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 27: События</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .demo-btn { background: #ff0000; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 27: События</h1>
+        <p>Реакция на действия пользователя</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое события?</h3>
+        <p>События - это действия, которые происходят на веб-странице: клики, движения мыши, нажатия клавиш и т.д.</p>
+
+        <h3>addEventListener</h3>
+        <div class="code-block">
+            <code>let button = document.querySelector('.my-button');<br><br>
+button.addEventListener('click', function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Кнопка нажата!');<br>
+});<br><br>
+// Стрелочная функция<br>
+button.addEventListener('click', () => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Клик!');<br>
+});</code>
+        </div>
+
+        <h3>Событие Click</h3>
+        <div class="code-block">
+            <code>&lt;button id="myBtn"&gt;Нажми меня&lt;/button&gt;<br><br>
+&lt;script&gt;<br>
+let btn = document.getElementById('myBtn');<br>
+btn.addEventListener('click', () => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alert('Привет!');<br>
+});<br>
+&lt;/script&gt;</code>
+        </div>
+
+        <div style="background: #2a2a2a; padding: 20px; margin: 20px 0; border-radius: 8px;">
+            <button class="demo-btn" onclick="alert('Кнопка работает!')">Попробуй нажать!</button>
+        </div>
+
+        <h3>Event Object (объект события)</h3>
+        <div class="code-block">
+            <code>button.addEventListener('click', function(event) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(event.target); // элемент, на котором произошло событие<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(event.type); // 'click'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(event.clientX); // координата X мыши<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(event.clientY); // координата Y мыши<br>
+});</code>
+        </div>
+
+        <h3>Популярные события мыши</h3>
+        <div class="example">
+            <p><strong>click</strong> - клик мышью</p>
+            <p><strong>dblclick</strong> - двойной клик</p>
+            <p><strong>mouseover</strong> - курсор навелся на элемент</p>
+            <p><strong>mouseout</strong> - курсор ушел с элемента</p>
+            <p><strong>mousemove</strong> - движение мыши</p>
+        </div>
+
+        <h3>События клавиатуры</h3>
+        <div class="code-block">
+            <code>document.addEventListener('keydown', (event) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Нажата клавиша:', event.key);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (event.key === 'Enter') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Нажат Enter!');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+});</code>
+        </div>
+
+        <div class="example">
+            <p><strong>keydown</strong> - клавиша нажата</p>
+            <p><strong>keyup</strong> - клавиша отпущена</p>
+            <p><strong>keypress</strong> - клавиша нажата (устарело)</p>
+        </div>
+
+        <h3>События формы</h3>
+        <div class="code-block">
+            <code>let input = document.querySelector('input');<br><br>
+// Изменение значения<br>
+input.addEventListener('input', (e) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(e.target.value);<br>
+});<br><br>
+// Отправка формы<br>
+let form = document.querySelector('form');<br>
+form.addEventListener('submit', (e) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault(); // отменить отправку<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Форма отправлена!');<br>
+});</code>
+        </div>
+
+        <h3>Удаление обработчика</h3>
+        <div class="code-block">
+            <code>function handleClick() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Клик!');<br>
+}<br><br>
+button.addEventListener('click', handleClick);<br><br>
+// Удалить обработчик<br>
+button.removeEventListener('click', handleClick);</code>
+        </div>
+
+        <h3>Event delegation (делегирование)</h3>
+        <div class="code-block">
+            <code>// Вместо добавления обработчика каждой кнопке<br>
+document.querySelector('.container').addEventListener('click', (e) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (e.target.tagName === 'BUTTON') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Кнопка нажата:', e.target.textContent);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+});</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте кнопку, которая меняет свой текст при клике</p>
+            <p>2. Создайте поле ввода, которое выводит текст в реальном времени</p>
+            <p>3. Создайте блок, который меняет цвет при наведении мыши</p>
+            <p>4. Создайте обработчик, который реагирует на нажатие клавиши Escape</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

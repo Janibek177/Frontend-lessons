@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 18: Введение в JavaScript</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 18: Введение в JavaScript</h1>
+        <p>Начинаем программировать!</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое JavaScript?</h3>
+        <p>JavaScript - это язык программирования, который делает веб-страницы интерактивными. С его помощью можно создавать игры, анимации, обрабатывать формы и многое другое.</p>
+
+        <h3>Подключение JavaScript:</h3>
+
+        <h3>1. Внутри HTML (между тегами script):</h3>
+        <div class="code-block">
+            <code>&lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет, мир!');<br>
+&lt;/script&gt;</code>
+        </div>
+
+        <h3>2. Внешний файл (рекомендуется):</h3>
+        <div class="code-block">
+            <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+        </div>
+
+        <h3>Консоль разработчика:</h3>
+        <p>Нажмите F12 в браузере, чтобы открыть консоль и увидеть вывод JavaScript.</p>
+
+        <h3>Console.log - вывод в консоль:</h3>
+        <div class="code-block">
+            <code>console.log('Привет!');<br>
+console.log(100);<br>
+console.log('Результат:', 5 + 5);</code>
+        </div>
+
+        <h3>Комментарии:</h3>
+        <div class="code-block">
+            <code>// Однострочный комментарий<br><br>
+/*<br>
+&nbsp;&nbsp;Многострочный<br>
+&nbsp;&nbsp;комментарий<br>
+*/</code>
+        </div>
+
+        <h3>Точка с запятой:</h3>
+        <p>В JavaScript рекомендуется ставить точку с запятой в конце каждой команды.</p>
+        <div class="code-block">
+            <code>console.log('Первая строка');<br>
+console.log('Вторая строка');</code>
+        </div>
+
+        <h3>Первая программа:</h3>
+        <div class="code-block">
+            <code>// Выводим приветствие<br>
+console.log('Привет, мир!');<br>
+console.log('Я изучаю JavaScript!');<br><br>
+// Простые вычисления<br>
+console.log(10 + 5);<br>
+console.log(20 * 3);</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте HTML файл и подключите JS файл</p>
+            <p>2. Выведите в консоль "Привет, мое имя [ваше имя]"</p>
+            <p>3. Выведите результат нескольких математических операций</p>
+            <p>4. Добавьте комментарии к своему коду</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уроки по веб-разработке</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="image.png">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="lang-switcher">
+                <button onclick="changeLang('ru')" class="lang-btn" data-lang="ru">RU</button>
+                <button onclick="changeLang('uz')" class="lang-btn" data-lang="uz">UZ</button>
+                <button onclick="changeLang('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+        <h1 data-i18n="title">📚 Уроки веб-разработки</h1>
+        <p data-i18n="desc">Полный курс от HTML до JavaScript</p>
+    </header>
+
+    <main>
+        <section class="lesson-category">
+            <h2 data-i18n="html_sec">HTML - Основы</h2>
+            <div class="lessons">
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson1.html'">
+                    <h3 data-i18n="l1_title">Урок 1: Введение в HTML</h3>
+                    <p data-i18n="l1_desc">Что такое HTML? Структура HTML документа. Основные теги: html, head, body, title.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson2.html'">
+                    <h3 data-i18n="l2_title">Урок 2: Текстовые элементы</h3>
+                    <p data-i18n="l2_desc">Работа с текстом: заголовки (h1-h6), параграфы (p), форматирование текста (strong, em, br, hr).</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson3.html'">
+                    <h3 data-i18n="l3_title">Урок 3: Ссылки и изображения</h3>
+                    <p data-i18n="l3_desc">Создание ссылок (a), атрибуты href и target. Вставка изображений (img), атрибуты src, alt, width, height.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson4.html'">
+                    <h3 data-i18n="l4_title">Урок 4: Списки</h3>
+                    <p data-i18n="l4_desc">Маркированные списки (ul, li), нумерованные списки (ol, li), вложенные списки.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson5.html'">
+                    <h3 data-i18n="l5_title">Урок 5: Таблицы</h3>
+                    <p data-i18n="l5_desc">Создание таблиц (table, tr, td, th), объединение ячеек (colspan, rowspan), стилизация таблиц.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson6.html'">
+                    <h3 data-i18n="l6_title">Урок 6: Формы</h3>
+                    <p data-i18n="l6_desc">Создание форм (form, input, textarea, select, button), типы полей ввода, атрибуты форм.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson7.html'">
+                    <h3 data-i18n="l7_title">Урок 7: Семантические теги</h3>
+                    <p data-i18n="l7_desc">Header, nav, main, section, article, aside, footer. Структурирование контента.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-category">
+            <h2 data-i18n="css_sec">CSS - Стилизация</h2>
+            <div class="lessons">
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson8.html'">
+                    <h3 data-i18n="l8_title">Урок 8: Введение в CSS</h3>
+                    <p data-i18n="l8_desc">Что такое CSS? Способы подключения CSS: inline, internal, external. Синтаксис CSS.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson9.html'">
+                    <h3 data-i18n="l9_title">Урок 9: Селекторы</h3>
+                    <p data-i18n="l9_desc">Типы селекторов: по тегу, по классу, по id, универсальный селектор. Комбинированные селекторы.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson10.html'">
+                    <h3 data-i18n="l10_title">Урок 10: Цвета и фон</h3>
+                    <p data-i18n="l10_desc">Color, background-color, background-image, background-size, background-position. Градиенты.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson11.html'">
+                    <h3 data-i18n="l11_title">Урок 11: Шрифты и текст</h3>
+                    <p data-i18n="l11_desc">Font-family, font-size, font-weight, text-align, text-decoration, line-height, letter-spacing.</p>
+                    <span class="tag" data-i18n="tag_basic">Основы</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson12.html'">
+                    <h3 data-i18n="l12_title">Урок 12: Box Model</h3>
+                    <p data-i18n="l12_desc">Модель блока: margin, padding, border, width, height. Box-sizing.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson13.html'">
+                    <h3 data-i18n="l13_title">Урок 13: Display и Position</h3>
+                    <p data-i18n="l13_desc">Display: block, inline, inline-block, none. Position: static, relative, absolute, fixed, sticky.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson14.html'">
+                    <h3 data-i18n="l14_title">Урок 14: Flexbox</h3>
+                    <p data-i18n="l14_desc">Flex-контейнер и flex-элементы. Justify-content, align-items, flex-direction, flex-wrap, gap.</p>
+                    <span class="tag" data-i18n="tag_med">Средний</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson15.html'">
+                    <h3 data-i18n="l15_title">Урок 15: Grid Layout</h3>
+                    <p data-i18n="l15_desc">Grid-контейнер, grid-template-columns, grid-template-rows, grid-gap, области сетки.</p>
+                    <span class="tag" data-i18n="tag_adv">Продвинутый</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson16.html'">
+                    <h3 data-i18n="l16_title">Урок 16: Анимации</h3>
+                    <p data-i18n="l16_desc">Transition, transform (rotate, scale, translate), animations, keyframes.</p>
+                    <span class="tag" data-i18n="tag_adv">Продвинутый</span>
+                </div>
+                <div class="lesson-card" onclick="window.location.href='lessons/lesson17.html'">
+                    <h3 data-i18n="l17_title">Урок 17: Адаптивный дизайн</h3>
+                    <p data-i18n="l17_desc">Media queries, viewport, мобильная адаптация, breakpoints.</p>
+                    <span class="tag" data-i18n="tag_adv">Продвинутый</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer">© 2026 Уроки веб-разработки | Изучай и практикуйся</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

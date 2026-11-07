@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 21: Условия</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 21: Условия</h1>
+        <p>Принятие решений в коде</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое условия?</h3>
+        <p>Условия позволяют выполнять разный код в зависимости от ситуации.</p>
+
+        <h3>Оператор if (если):</h3>
+        <div class="code-block">
+            <code>let age = 18;<br><br>
+if (age >= 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Вы взрослый');<br>
+}</code>
+        </div>
+
+        <h3>if...else (если...иначе):</h3>
+        <div class="code-block">
+            <code>let age = 15;<br><br>
+if (age >= 18) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Вы взрослый');<br>
+} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Вы несовершеннолетний');<br>
+}</code>
+        </div>
+
+        <h3>else if (множественные условия):</h3>
+        <div class="code-block">
+            <code>let score = 85;<br><br>
+if (score >= 90) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Отлично!');<br>
+} else if (score >= 70) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Хорошо!');<br>
+} else if (score >= 50) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Удовлетворительно');<br>
+} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Плохо');<br>
+}</code>
+        </div>
+
+        <h3>Операторы сравнения:</h3>
+        <div class="example">
+            <p><strong>==</strong> - равно (не строгое)</p>
+            <p><strong>===</strong> - равно (строгое, рекомендуется)</p>
+            <p><strong>!=</strong> - не равно</p>
+            <p><strong>!==</strong> - не равно (строгое)</p>
+            <p><strong>&gt;</strong> - больше</p>
+            <p><strong>&lt;</strong> - меньше</p>
+            <p><strong>&gt;=</strong> - больше или равно</p>
+            <p><strong>&lt;=</strong> - меньше или равно</p>
+        </div>
+
+        <h3>Логические операторы:</h3>
+        <div class="code-block">
+            <code>// && (И) - оба условия должны быть true<br>
+if (age >= 18 && hasLicense) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Можете водить');<br>
+}<br><br>
+// || (ИЛИ) - хотя бы одно условие true<br>
+if (day === 'Saturday' || day === 'Sunday') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Выходной!');<br>
+}<br><br>
+// ! (НЕ) - инверсия<br>
+if (!isRaining) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Можно гулять');<br>
+}</code>
+        </div>
+
+        <h3>Тернарный оператор (краткая форма):</h3>
+        <div class="code-block">
+            <code>let age = 20;<br>
+let status = age >= 18 ? 'взрослый' : 'ребенок';<br>
+console.log(status); // 'взрослый'</code>
+        </div>
+
+        <h3>Switch (множественный выбор):</h3>
+        <div class="code-block">
+            <code>let day = 'Monday';<br><br>
+switch (day) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;case 'Monday':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Понедельник');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;case 'Friday':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Пятница!');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Обычный день');<br>
+}</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте переменную с температурой и выведите "Жарко", "Тепло" или "Холодно"</p>
+            <p>2. Проверьте четное ли число (подсказка: используйте оператор %)</p>
+            <p>3. Создайте простой калькулятор с switch для операций +, -, *, /</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

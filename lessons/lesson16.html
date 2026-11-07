@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 16: Анимации</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .anim-box { background: #ff0000; color: #000; padding: 20px; margin: 20px 0; width: 100px; text-align: center; font-weight: bold; }
+        .trans-demo { transition: all 0.3s; }
+        .trans-demo:hover { transform: scale(1.2); background: #cc0000; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .spin-demo { animation: spin 2s linear infinite; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 16: Анимации</h1>
+        <p>Движение и эффекты в CSS</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Transition - плавные переходы</h3>
+        <div class="code-block">
+            <code>.box {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background: red;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.3s ease;<br>
+}<br><br>
+.box:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background: blue;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transform: scale(1.2);<br>
+}</code>
+        </div>
+
+        <div class="anim-box trans-demo">Наведи на меня</div>
+
+        <h3>Transform - трансформации</h3>
+        <div class="code-block">
+            <code>/* Поворот */<br>
+transform: rotate(45deg);<br><br>
+/* Масштаб */<br>
+transform: scale(1.5);<br><br>
+/* Смещение */<br>
+transform: translate(50px, 100px);<br><br>
+/* Наклон */<br>
+transform: skew(20deg);<br><br>
+/* Комбинация */<br>
+transform: rotate(45deg) scale(1.2);</code>
+        </div>
+
+        <h3>Свойства transition</h3>
+        <div class="code-block">
+            <code>/* Полная форма */<br>
+transition-property: background;<br>
+transition-duration: 0.5s;<br>
+transition-timing-function: ease;<br>
+transition-delay: 0.2s;<br><br>
+/* Короткая форма */<br>
+transition: background 0.5s ease 0.2s;<br><br>
+/* Для всех свойств */<br>
+transition: all 0.3s;</code>
+        </div>
+
+        <h3>Timing functions</h3>
+        <div class="example">
+            <p><strong>ease</strong> - медленно-быстро-медленно (по умолчанию)</p>
+            <p><strong>linear</strong> - равномерно</p>
+            <p><strong>ease-in</strong> - медленный старт</p>
+            <p><strong>ease-out</strong> - медленный финиш</p>
+            <p><strong>ease-in-out</strong> - медленный старт и финиш</p>
+        </div>
+
+        <h3>Animations - ключевые кадры</h3>
+        <div class="code-block">
+            <code>@keyframes slide {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translateX(0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;100% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translateX(200px);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br><br>
+.box {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;animation: slide 2s ease infinite;<br>
+}</code>
+        </div>
+
+        <h3>Свойства animation</h3>
+        <div class="code-block">
+            <code>animation-name: slide;<br>
+animation-duration: 2s;<br>
+animation-timing-function: ease;<br>
+animation-delay: 0s;<br>
+animation-iteration-count: infinite; /* или число */<br>
+animation-direction: alternate; /* normal, reverse, alternate */<br><br>
+/* Короткая форма */<br>
+animation: slide 2s ease 0s infinite alternate;</code>
+        </div>
+
+        <h3>Пример вращения</h3>
+        <div class="code-block">
+            <code>@keyframes spin {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(0deg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: rotate(360deg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br><br>
+.spinner {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;animation: spin 2s linear infinite;<br>
+}</code>
+        </div>
+
+        <div class="anim-box spin-demo">↻</div>
+
+        <h3>Сложная анимация</h3>
+        <div class="code-block">
+            <code>@keyframes bounce {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0%, 100% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;50% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-50px);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте кнопку с плавным изменением цвета и размера при наведении</p>
+            <p>2. Создайте крутящийся загрузчик</p>
+            <p>3. Создайте анимацию появления элемента (fade in)</p>
+            <p>4. Создайте пульсирующую кнопку</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

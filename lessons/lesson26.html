@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 26: DOM манипуляция</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .demo-box { background: #2a2a2a; padding: 20px; border: 2px solid #ff0000; border-radius: 8px; margin: 20px 0; }
+        #demo-text { color: #00ff00; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 26: DOM манипуляция</h1>
+        <p>Управление HTML элементами через JavaScript</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое DOM?</h3>
+        <p>DOM (Document Object Model) - это представление HTML страницы в виде дерева объектов, которыми можно управлять через JavaScript.</p>
+
+        <h3>Поиск элементов:</h3>
+        <div class="code-block">
+            <code>// По ID<br>
+let element = document.getElementById('myId');<br><br>
+// По классу (первый найденный)<br>
+let element = document.querySelector('.myClass');<br><br>
+// Все элементы с классом<br>
+let elements = document.querySelectorAll('.myClass');<br><br>
+// По тегу<br>
+let paragraphs = document.querySelectorAll('p');</code>
+        </div>
+
+        <h3>Изменение содержимого:</h3>
+        <div class="code-block">
+            <code>// Изменить текст<br>
+element.textContent = 'Новый текст';<br><br>
+// Изменить HTML внутри элемента<br>
+element.innerHTML = '&lt;strong&gt;Жирный текст&lt;/strong&gt;';</code>
+        </div>
+
+        <h3>Изменение стилей:</h3>
+        <div class="code-block">
+            <code>element.style.color = 'red';<br>
+element.style.backgroundColor = 'black';<br>
+element.style.fontSize = '20px';<br>
+element.style.display = 'none'; // скрыть</code>
+        </div>
+
+        <h3>Работа с классами:</h3>
+        <div class="code-block">
+            <code>// Добавить класс<br>
+element.classList.add('active');<br><br>
+// Удалить класс<br>
+element.classList.remove('active');<br><br>
+// Переключить класс<br>
+element.classList.toggle('active');<br><br>
+// Проверить наличие класса<br>
+if (element.classList.contains('active')) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Класс есть');<br>
+}</code>
+        </div>
+
+        <h3>Создание новых элементов:</h3>
+        <div class="code-block">
+            <code>// Создать элемент<br>
+let newDiv = document.createElement('div');<br>
+newDiv.textContent = 'Новый блок';<br>
+newDiv.className = 'my-class';<br><br>
+// Добавить в конец родителя<br>
+document.body.appendChild(newDiv);<br><br>
+// Добавить перед элементом<br>
+parent.insertBefore(newDiv, existingElement);</code>
+        </div>
+
+        <h3>Удаление элементов:</h3>
+        <div class="code-block">
+            <code>element.remove();</code>
+        </div>
+
+        <h3>Получение и изменение атрибутов:</h3>
+        <div class="code-block">
+            <code>// Получить атрибут<br>
+let src = img.getAttribute('src');<br><br>
+// Установить атрибут<br>
+img.setAttribute('src', 'new-image.jpg');<br><br>
+// Удалить атрибут<br>
+img.removeAttribute('alt');</code>
+        </div>
+
+        <h3>Интерактивный пример:</h3>
+        <div class="demo-box">
+            <p id="demo-text">Этот текст можно изменить</p>
+            <button onclick="document.getElementById('demo-text').textContent = 'Текст изменен!'; document.getElementById('demo-text').style.color = '#ff0000';" style="background: #ff0000; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Нажми меня!</button>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте кнопку, которая меняет цвет фона страницы</p>
+            <p>2. Создайте input и кнопку, которая выводит введенный текст на страницу</p>
+            <p>3. Создайте счетчик с кнопками + и -</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

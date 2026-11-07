@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 25: Объекты</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 25: Объекты</h1>
+        <p>Работа со структурированными данными</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое объект?</h3>
+        <p>Объект - это коллекция свойств (ключ: значение). Как словарь или картотека.</p>
+
+        <h3>Создание объекта</h3>
+        <div class="code-block">
+            <code>let person = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age: 25,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city: 'Москва'<br>
+};</code>
+        </div>
+
+        <h3>Доступ к свойствам</h3>
+        <div class="code-block">
+            <code>let person = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age: 25<br>
+};<br><br>
+// Точечная нотация<br>
+console.log(person.name); // 'Иван'<br><br>
+// Квадратные скобки<br>
+console.log(person['age']); // 25<br><br>
+// Изменить свойство<br>
+person.age = 26;<br><br>
+// Добавить новое свойство<br>
+person.city = 'Москва';</code>
+        </div>
+
+        <h3>Удаление свойств</h3>
+        <div class="code-block">
+            <code>let person = { name: 'Иван', age: 25 };<br>
+delete person.age;<br>
+console.log(person); // { name: 'Иван' }</code>
+        </div>
+
+        <h3>Методы объекта</h3>
+        <div class="code-block">
+            <code>let person = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age: 25,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;greet: function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет!');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+};<br><br>
+person.greet(); // 'Привет!'</code>
+        </div>
+
+        <h3>This - ссылка на объект</h3>
+        <div class="code-block">
+            <code>let person = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age: 25,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;introduce: function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Меня зовут ${this.name}, мне ${this.age} лет`);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+};<br><br>
+person.introduce(); // 'Меня зовут Иван, мне 25 лет'</code>
+        </div>
+
+        <h3>Перебор свойств (for...in)</h3>
+        <div class="code-block">
+            <code>let person = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age: 25,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city: 'Москва'<br>
+};<br><br>
+for (let key in person) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(key + ': ' + person[key]);<br>
+}<br>
+// name: Иван<br>
+// age: 25<br>
+// city: Москва</code>
+        </div>
+
+        <h3>Object.keys, values, entries</h3>
+        <div class="code-block">
+            <code>let person = { name: 'Иван', age: 25 };<br><br>
+// Получить все ключи<br>
+console.log(Object.keys(person)); // ['name', 'age']<br><br>
+// Получить все значения<br>
+console.log(Object.values(person)); // ['Иван', 25]<br><br>
+// Получить пары [ключ, значение]<br>
+console.log(Object.entries(person)); // [['name', 'Иван'], ['age', 25]]</code>
+        </div>
+
+        <h3>Вложенные объекты</h3>
+        <div class="code-block">
+            <code>let user = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name: 'Иван',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city: 'Москва',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street: 'Ленина',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;house: 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+};<br><br>
+console.log(user.address.city); // 'Москва'</code>
+        </div>
+
+        <h3>Копирование объекта</h3>
+        <div class="code-block">
+            <code>let person = { name: 'Иван', age: 25 };<br><br>
+// Поверхностное копирование<br>
+let copy = { ...person };<br><br>
+// Или<br>
+let copy2 = Object.assign({}, person);</code>
+        </div>
+
+        <h3>Проверка наличия свойства</h3>
+        <div class="code-block">
+            <code>let person = { name: 'Иван' };<br><br>
+console.log('name' in person); // true<br>
+console.log('age' in person); // false</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте объект "автомобиль" с свойствами: марка, год, цвет</p>
+            <p>2. Добавьте метод start(), который выводит "Машина заведена"</p>
+            <p>3. Создайте массив из нескольких объектов-пользователей</p>
+            <p>4. Переберите все свойства объекта с помощью for...in</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 12: Box Model</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .box-demo { background: #ff0000; color: #000; padding: 20px; margin: 20px; border: 5px solid #fff; width: 200px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 12: Box Model</h1>
+        <p>Модель блока в CSS</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое Box Model?</h3>
+        <p>Каждый элемент в HTML - это прямоугольная коробка, состоящая из 4 частей:</p>
+
+        <div class="example">
+            <p><strong>Content</strong> - содержимое (текст, изображения)</p>
+            <p><strong>Padding</strong> - внутренний отступ (между контентом и границей)</p>
+            <p><strong>Border</strong> - граница</p>
+            <p><strong>Margin</strong> - внешний отступ (между элементами)</p>
+        </div>
+
+        <h3>Padding (внутренний отступ)</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 20px; /* со всех сторон */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px 20px; /* вверх-низ | лево-право */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px 20px 30px 40px; /* верх | право | низ | лево */<br>
+}<br><br>
+/* Или отдельно */<br>
+padding-top: 10px;<br>
+padding-right: 20px;<br>
+padding-bottom: 10px;<br>
+padding-left: 20px;</code>
+        </div>
+
+        <div class="box-demo">Контент с padding 20px</div>
+
+        <h3>Border (граница)</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid #ff0000;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid; /* dashed, dotted, double */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border-radius: 10px; /* скругление углов */<br>
+}</code>
+        </div>
+
+        <h3>Margin (внешний отступ)</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin: 20px; /* со всех сторон */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin: 10px 20px; /* вверх-низ | лево-право */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin: 0 auto; /* центрирование блока */<br>
+}<br><br>
+margin-top: 10px;<br>
+margin-right: 20px;<br>
+margin-bottom: 10px;<br>
+margin-left: 20px;</code>
+        </div>
+
+        <h3>Width и Height</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 300px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 200px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%; /* максимальная ширина */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min-height: 100px; /* минимальная высота */<br>
+}</code>
+        </div>
+
+        <h3>Box-sizing</h3>
+        <div class="code-block">
+            <code>/* По умолчанию width не включает padding и border */<br>
+box-sizing: content-box;<br><br>
+/* Рекомендуется: width включает padding и border */<br>
+box-sizing: border-box;<br><br>
+/* Применить ко всем элементам */<br>
+* {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+}</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте блок 300x200px с padding 20px и border 5px</p>
+            <p>2. Отцентрируйте блок с помощью margin: 0 auto</p>
+            <p>3. Добавьте border-radius для скругления углов</p>
+            <p>4. Примените box-sizing: border-box ко всем элементам</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

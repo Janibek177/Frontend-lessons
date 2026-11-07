@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 10: Цвета и фон</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .color-demo { padding: 20px; margin: 10px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 10: Цвета и фон</h1>
+        <p>Работа с цветами и фоновыми изображениями</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Способы указания цвета:</h3>
+
+        <div class="code-block">
+            <code>/* Название цвета */<br>
+color: red;<br>
+color: blue;<br><br>
+/* HEX код */<br>
+color: #ff0000;<br>
+color: #000000;<br><br>
+/* RGB */<br>
+color: rgb(255, 0, 0);<br><br>
+/* RGBA (с прозрачностью) */<br>
+color: rgba(255, 0, 0, 0.5);</code>
+        </div>
+
+        <h3>Цвет текста и фона:</h3>
+        <div class="code-block">
+            <code>p {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #000000;<br>
+}</code>
+        </div>
+
+        <div class="color-demo" style="background: #ff0000; color: #000;">
+            Красный фон, черный текст
+        </div>
+        <div class="color-demo" style="background: #000; color: #00ff00;">
+            Черный фон, зеленый текст
+        </div>
+
+        <h3>Фоновые изображения:</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-image: url('image.jpg');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-size: cover;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-position: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-repeat: no-repeat;<br>
+}</code>
+        </div>
+
+        <h3>Градиенты:</h3>
+        <div class="code-block">
+            <code>/* Линейный градиент */<br>
+background: linear-gradient(to right, red, black);<br><br>
+/* Радиальный градиент */<br>
+background: radial-gradient(circle, red, black);</code>
+        </div>
+
+        <div class="color-demo" style="background: linear-gradient(135deg, #ff0000, #000000);">
+            Градиент от красного к черному
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте блок с черным фоном и красным текстом</p>
+            <p>2. Создайте градиентный фон для header</p>
+            <p>3. Поэкспериментируйте с разными цветами в формате HEX и RGB</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

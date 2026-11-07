@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 14: Flexbox</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .flex-demo { display: flex; gap: 10px; padding: 20px; background: #2a2a2a; border-radius: 8px; margin: 10px 0; }
+        .flex-item { background: #ff0000; color: #000; padding: 20px; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 14: Flexbox</h1>
+        <p>Современный способ создания макетов</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое Flexbox?</h3>
+        <p>Flexbox - это мощная система макетирования, которая упрощает выравнивание и распределение элементов.</p>
+
+        <h3>Основы Flexbox:</h3>
+        <div class="code-block">
+            <code>.container {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+}</code>
+        </div>
+
+        <div class="flex-demo">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+
+        <h3>Основные свойства контейнера:</h3>
+        <div class="example">
+            <p><strong>flex-direction</strong> - направление (row, column)</p>
+            <p><strong>justify-content</strong> - выравнивание по главной оси</p>
+            <p><strong>align-items</strong> - выравнивание по поперечной оси</p>
+            <p><strong>gap</strong> - отступы между элементами</p>
+            <p><strong>flex-wrap</strong> - перенос элементов</p>
+        </div>
+
+        <h3>justify-content (горизонтальное выравнивание):</h3>
+        <div class="code-block">
+            <code>justify-content: flex-start; /* в начало */<br>
+justify-content: center; /* по центру */<br>
+justify-content: flex-end; /* в конец */<br>
+justify-content: space-between; /* с отступами */<br>
+justify-content: space-around; /* вокруг элементов */</code>
+        </div>
+
+        <div class="flex-demo" style="justify-content: center;">
+            <div class="flex-item">Center</div>
+            <div class="flex-item">Center</div>
+        </div>
+
+        <h3>align-items (вертикальное выравнивание):</h3>
+        <div class="code-block">
+            <code>align-items: flex-start; /* вверх */<br>
+align-items: center; /* по центру */<br>
+align-items: flex-end; /* вниз */<br>
+align-items: stretch; /* растянуть */</code>
+        </div>
+
+        <h3>flex-direction:</h3>
+        <div class="code-block">
+            <code>flex-direction: row; /* горизонтально */<br>
+flex-direction: column; /* вертикально */</code>
+        </div>
+
+        <div class="flex-demo" style="flex-direction: column;">
+            <div class="flex-item">Элемент 1</div>
+            <div class="flex-item">Элемент 2</div>
+            <div class="flex-item">Элемент 3</div>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте навигационное меню с помощью Flexbox</p>
+            <p>2. Разместите элементы по центру страницы</p>
+            <p>3. Создайте карточки товаров в ряд с gap между ними</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

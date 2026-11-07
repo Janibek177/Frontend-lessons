@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 7: Семантические теги</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 7: Семантические теги</h1>
+        <p>Правильная структура HTML5</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое семантика?</h3>
+        <p>Семантические теги описывают смысл содержимого, а не просто его внешний вид. Это важно для SEO и доступности.</p>
+
+        <h3>Основные семантические теги:</h3>
+        <div class="example">
+            <p><strong>&lt;header&gt;</strong> - шапка сайта или раздела</p>
+            <p><strong>&lt;nav&gt;</strong> - навигационное меню</p>
+            <p><strong>&lt;main&gt;</strong> - основное содержимое страницы</p>
+            <p><strong>&lt;section&gt;</strong> - раздел контента</p>
+            <p><strong>&lt;article&gt;</strong> - независимая статья</p>
+            <p><strong>&lt;aside&gt;</strong> - боковая панель</p>
+            <p><strong>&lt;footer&gt;</strong> - подвал сайта</p>
+        </div>
+
+        <h3>Пример структуры:</h3>
+        <div class="code-block">
+            <code>&lt;header&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Мой сайт&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Главная&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;О нас&lt;/a&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br>
+&lt;/header&gt;<br><br>
+&lt;main&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Новости&lt;/h2&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Заголовок статьи&lt;/h3&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Текст статьи...&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+&lt;/main&gt;<br><br>
+&lt;footer&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;© 2026 Мой сайт&lt;/p&gt;<br>
+&lt;/footer&gt;</code>
+        </div>
+
+        <h3>Почему это важно?</h3>
+        <div class="example">
+            <p>✓ Улучшает SEO (поисковая оптимизация)</p>
+            <p>✓ Делает код понятнее</p>
+            <p>✓ Помогает скринридерам для людей с ограничениями</p>
+            <p>✓ Облегчает поддержку кода</p>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте страницу блога с правильной семантической структурой</p>
+            <p>2. Используйте header, nav, main, article, footer</p>
+            <p>3. Добавьте несколько статей внутри main</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 13: Display и Position</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .demo-box { background: #ff0000; color: #000; padding: 10px; margin: 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 13: Display и Position</h1>
+        <p>Управление отображением и позиционированием</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Display</h3>
+        <p>Свойство display определяет как элемент отображается на странице.</p>
+
+        <h3>display: block</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+}</code>
+        </div>
+        <div class="example">
+            <p>• Занимает всю ширину родителя</p>
+            <p>• Начинается с новой строки</p>
+            <p>• Можно задать width и height</p>
+            <p>Примеры: div, p, h1, section</p>
+        </div>
+
+        <h3>display: inline</h3>
+        <div class="code-block">
+            <code>span {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: inline;<br>
+}</code>
+        </div>
+        <div class="example">
+            <p>• Занимает только необходимую ширину</p>
+            <p>• Не переносится на новую строку</p>
+            <p>• НЕ работают width и height</p>
+            <p>Примеры: span, a, strong</p>
+        </div>
+
+        <h3>display: inline-block</h3>
+        <div class="code-block">
+            <code>button {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>
+}</code>
+        </div>
+        <div class="example">
+            <p>• Элементы в строке, но с width и height</p>
+            <p>• Лучшее из обоих миров</p>
+        </div>
+
+        <div style="background: #2a2a2a; padding: 20px; margin: 20px 0;">
+            <div class="demo-box">Block 1</div>
+            <div class="demo-box">Block 2</div>
+            <div class="demo-box">Block 3</div>
+        </div>
+
+        <h3>display: none</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: none; /* полностью скрывает элемент */<br>
+}</code>
+        </div>
+
+        <h3>Position</h3>
+        <p>Свойство position управляет позиционированием элемента.</p>
+
+        <h3>position: static (по умолчанию)</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: static;<br>
+}</code>
+        </div>
+        <p>Обычное положение в потоке документа</p>
+
+        <h3>position: relative</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;left: 30px;<br>
+}</code>
+        </div>
+        <p>Смещается относительно своего обычного положения</p>
+
+        <h3>position: absolute</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right: 0;<br>
+}</code>
+        </div>
+        <p>Позиционируется относительно ближайшего positioned родителя</p>
+
+        <h3>position: fixed</h3>
+        <div class="code-block">
+            <code>header {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: fixed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+}</code>
+        </div>
+        <p>Фиксируется относительно окна браузера (не прокручивается)</p>
+
+        <h3>position: sticky</h3>
+        <div class="code-block">
+            <code>nav {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: sticky;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+}</code>
+        </div>
+        <p>Ведет себя как relative, но становится fixed при прокрутке</p>
+
+        <h3>Z-index (слои)</h3>
+        <div class="code-block">
+            <code>div {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z-index: 10; /* чем больше, тем выше слой */<br>
+}</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте fixed header, который остается вверху при прокрутке</p>
+            <p>2. Создайте кнопку с position: absolute в правом нижнем углу</p>
+            <p>3. Поэкспериментируйте с z-index на перекрывающихся элементах</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

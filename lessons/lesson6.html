@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 6: Формы</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .demo-form { background: #2a2a2a; padding: 20px; border-radius: 8px; }
+        .demo-form input, .demo-form textarea, .demo-form select { width: 100%; padding: 8px; margin: 5px 0 15px; background: #1a1a1a; border: 1px solid #ff0000; color: #fff; border-radius: 4px; }
+        .demo-form button { background: #ff0000; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 6: Формы</h1>
+        <p>Создание интерактивных форм</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Основы форм</h3>
+        <p>Формы используются для сбора данных от пользователей.</p>
+
+        <div class="code-block">
+            <code>&lt;form&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Имя:&lt;/label&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="name"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Отправить&lt;/button&gt;<br>
+&lt;/form&gt;</code>
+        </div>
+
+        <h3>Типы полей ввода</h3>
+        <div class="example">
+            <p><strong>text</strong> - текстовое поле</p>
+            <p><strong>password</strong> - поле для пароля</p>
+            <p><strong>email</strong> - поле для email</p>
+            <p><strong>number</strong> - числовое поле</p>
+            <p><strong>checkbox</strong> - чекбокс</p>
+            <p><strong>radio</strong> - радиокнопка</p>
+            <p><strong>file</strong> - загрузка файла</p>
+            <p><strong>date</strong> - выбор даты</p>
+        </div>
+
+        <h3>Пример формы:</h3>
+        <div class="demo-form">
+            <form>
+                <label>Имя:</label>
+                <input type="text" placeholder="Введите имя">
+
+                <label>Email:</label>
+                <input type="email" placeholder="example@mail.com">
+
+                <label>Возраст:</label>
+                <input type="number" min="1" max="100">
+
+                <label>Сообщение:</label>
+                <textarea rows="4" placeholder="Ваше сообщение"></textarea>
+
+                <label>Выберите язык:</label>
+                <select>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>JavaScript</option>
+                </select>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте форму регистрации с полями: имя, email, пароль</p>
+            <p>2. Добавьте выпадающий список с выбором страны</p>
+            <p>3. Добавьте чекбокс "Согласен с условиями"</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

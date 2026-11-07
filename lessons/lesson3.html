@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3: Ссылки и изображения</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 3: Ссылки и изображения</h1>
+        <p>Навигация и медиа элементы</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Ссылки (тег &lt;a&gt;)</h3>
+        <p>Ссылки позволяют создавать переходы между страницами.</p>
+
+        <div class="code-block">
+            <code>&lt;a href="https://google.com"&gt;Перейти в Google&lt;/a&gt;<br>
+&lt;a href="page2.html"&gt;Другая страница&lt;/a&gt;<br>
+&lt;a href="https://youtube.com" target="_blank"&gt;YouTube (новая вкладка)&lt;/a&gt;</code>
+        </div>
+
+        <h3>Атрибуты ссылок:</h3>
+        <div class="example">
+            <p><strong>href</strong> - адрес страницы</p>
+            <p><strong>target="_blank"</strong> - открыть в новой вкладке</p>
+            <p><strong>title</strong> - всплывающая подсказка</p>
+        </div>
+
+        <h3>Изображения (тег &lt;img&gt;)</h3>
+        <p>Для вставки изображений используется тег &lt;img&gt;.</p>
+
+        <div class="code-block">
+            <code>&lt;img src="photo.jpg" alt="Описание фото"&gt;<br>
+&lt;img src="logo.png" alt="Логотип" width="200" height="100"&gt;</code>
+        </div>
+
+        <h3>Атрибуты изображений:</h3>
+        <div class="example">
+            <p><strong>src</strong> - путь к файлу изображения</p>
+            <p><strong>alt</strong> - альтернативный текст (важно для SEO и доступности)</p>
+            <p><strong>width</strong> - ширина в пикселях</p>
+            <p><strong>height</strong> - высота в пикселях</p>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте страницу со ссылками на ваши любимые сайты</p>
+            <p>2. Добавьте изображение (можно использовать URL из интернета)</p>
+            <p>3. Сделайте изображение кликабельным, обернув его в тег &lt;a&gt;</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

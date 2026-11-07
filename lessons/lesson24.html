@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 24: Массивы</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 24: Массивы</h1>
+        <p>Работа со списками данных</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое массив?</h3>
+        <p>Массив - это список значений. Как коробка с пронумерованными ячейками.</p>
+
+        <h3>Создание массива</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан', 'апельсин'];<br>
+let numbers = [1, 2, 3, 4, 5];<br>
+let mixed = ['текст', 42, true, null];</code>
+        </div>
+
+        <h3>Доступ к элементам (индексация с 0)</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан', 'апельсин'];<br><br>
+console.log(fruits[0]); // 'яблоко'<br>
+console.log(fruits[1]); // 'банан'<br>
+console.log(fruits[2]); // 'апельсин'<br><br>
+// Изменить элемент<br>
+fruits[1] = 'груша';<br>
+console.log(fruits); // ['яблоко', 'груша', 'апельсин']</code>
+        </div>
+
+        <h3>Свойство length</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан', 'апельсин'];<br>
+console.log(fruits.length); // 3<br><br>
+// Последний элемент<br>
+console.log(fruits[fruits.length - 1]); // 'апельсин'</code>
+        </div>
+
+        <h3>Добавление элементов</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко'];<br><br>
+// push - добавить в конец<br>
+fruits.push('банан');<br>
+console.log(fruits); // ['яблоко', 'банан']<br><br>
+// unshift - добавить в начало<br>
+fruits.unshift('груша');<br>
+console.log(fruits); // ['груша', 'яблоко', 'банан']</code>
+        </div>
+
+        <h3>Удаление элементов</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан', 'апельсин'];<br><br>
+// pop - удалить последний<br>
+let last = fruits.pop();<br>
+console.log(last); // 'апельсин'<br>
+console.log(fruits); // ['яблоко', 'банан']<br><br>
+// shift - удалить первый<br>
+let first = fruits.shift();<br>
+console.log(first); // 'яблоко'<br>
+console.log(fruits); // ['банан']</code>
+        </div>
+
+        <h3>splice - удалить/вставить в середину</h3>
+        <div class="code-block">
+            <code>let arr = [1, 2, 3, 4, 5];<br><br>
+// Удалить 2 элемента начиная с индекса 1<br>
+arr.splice(1, 2);<br>
+console.log(arr); // [1, 4, 5]<br><br>
+// Вставить элементы<br>
+arr.splice(1, 0, 'a', 'b');<br>
+console.log(arr); // [1, 'a', 'b', 4, 5]</code>
+        </div>
+
+        <h3>slice - скопировать часть массива</h3>
+        <div class="code-block">
+            <code>let arr = [1, 2, 3, 4, 5];<br>
+let part = arr.slice(1, 4);<br>
+console.log(part); // [2, 3, 4]<br>
+console.log(arr); // [1, 2, 3, 4, 5] (не изменился)</code>
+        </div>
+
+        <h3>forEach - перебор массива</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан', 'апельсин'];<br><br>
+fruits.forEach(function(fruit) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(fruit);<br>
+});<br><br>
+// Стрелочная функция<br>
+fruits.forEach(fruit => console.log(fruit));</code>
+        </div>
+
+        <h3>map - создать новый массив</h3>
+        <div class="code-block">
+            <code>let numbers = [1, 2, 3, 4];<br>
+let doubled = numbers.map(num => num * 2);<br>
+console.log(doubled); // [2, 4, 6, 8]</code>
+        </div>
+
+        <h3>filter - отфильтровать массив</h3>
+        <div class="code-block">
+            <code>let numbers = [1, 2, 3, 4, 5, 6];<br>
+let even = numbers.filter(num => num % 2 === 0);<br>
+console.log(even); // [2, 4, 6]</code>
+        </div>
+
+        <h3>find - найти элемент</h3>
+        <div class="code-block">
+            <code>let numbers = [1, 5, 10, 15];<br>
+let result = numbers.find(num => num > 7);<br>
+console.log(result); // 10</code>
+        </div>
+
+        <h3>includes - проверить наличие</h3>
+        <div class="code-block">
+            <code>let fruits = ['яблоко', 'банан'];<br>
+console.log(fruits.includes('банан')); // true<br>
+console.log(fruits.includes('груша')); // false</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте массив с вашими любимыми фильмами</p>
+            <p>2. Добавьте новый фильм в конец и в начало</p>
+            <p>3. Создайте массив чисел от 1 до 10 и отфильтруйте только четные</p>
+            <p>4. Используйте map чтобы удвоить все числа в массиве</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

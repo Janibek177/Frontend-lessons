@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 23: Функции</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 23: Функции</h1>
+        <p>Переиспользуемые блоки кода</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое функция?</h3>
+        <p>Функция - это блок кода, который можно вызывать многократно. Это как рецепт: написал один раз, используешь много раз.</p>
+
+        <h3>Объявление функции</h3>
+        <div class="code-block">
+            <code>function sayHello() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет!');<br>
+}<br><br>
+// Вызов функции<br>
+sayHello(); // Выведет: Привет!<br>
+sayHello(); // Можно вызывать сколько угодно раз</code>
+        </div>
+
+        <h3>Функция с параметрами</h3>
+        <div class="code-block">
+            <code>function greet(name) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет, ' + name + '!');<br>
+}<br><br>
+greet('Иван'); // Привет, Иван!<br>
+greet('Мария'); // Привет, Мария!</code>
+        </div>
+
+        <h3>Несколько параметров</h3>
+        <div class="code-block">
+            <code>function add(a, b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(a + b);<br>
+}<br><br>
+add(5, 3); // 8<br>
+add(10, 20); // 30</code>
+        </div>
+
+        <h3>Return - возврат значения</h3>
+        <div class="code-block">
+            <code>function multiply(a, b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a * b;<br>
+}<br><br>
+let result = multiply(5, 3);<br>
+console.log(result); // 15<br><br>
+// Можно использовать сразу<br>
+console.log(multiply(10, 2)); // 20</code>
+        </div>
+
+        <div class="example">
+            <p><strong>return</strong> - возвращает значение и завершает функцию</p>
+            <p>Без return функция вернет undefined</p>
+        </div>
+
+        <h3>Параметры по умолчанию</h3>
+        <div class="code-block">
+            <code>function greet(name = 'Гость') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет, ' + name);<br>
+}<br><br>
+greet('Иван'); // Привет, Иван<br>
+greet(); // Привет, Гость</code>
+        </div>
+
+        <h3>Стрелочные функции (современный способ)</h3>
+        <div class="code-block">
+            <code>// Обычная функция<br>
+function add(a, b) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+}<br><br>
+// Стрелочная функция<br>
+const add = (a, b) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+};<br><br>
+// Короткая форма (если одна строка)<br>
+const add = (a, b) => a + b;<br><br>
+console.log(add(5, 3)); // 8</code>
+        </div>
+
+        <h3>Функция в переменной</h3>
+        <div class="code-block">
+            <code>const sayHi = function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Привет!');<br>
+};<br><br>
+sayHi();</code>
+        </div>
+
+        <h3>Область видимости (scope)</h3>
+        <div class="code-block">
+            <code>let globalVar = 'Глобальная';<br><br>
+function test() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;let localVar = 'Локальная';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(globalVar); // Работает<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(localVar); // Работает<br>
+}<br><br>
+test();<br>
+console.log(globalVar); // Работает<br>
+console.log(localVar); // Ошибка! localVar не существует здесь</code>
+        </div>
+
+        <h3>Практический пример</h3>
+        <div class="code-block">
+            <code>// Калькулятор<br>
+function calculator(num1, num2, operation) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (operation === '+') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num1 + num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (operation === '-') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num1 - num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (operation === '*') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num1 * num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} else if (operation === '/') {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num1 / num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br><br>
+console.log(calculator(10, 5, '+')); // 15<br>
+console.log(calculator(10, 5, '*')); // 50</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте функцию, которая принимает имя и возраст, выводит приветствие</p>
+            <p>2. Создайте функцию для вычисления площади прямоугольника</p>
+            <p>3. Создайте функцию, проверяющую четное ли число</p>
+            <p>4. Перепишите одну из функций стрелочным синтаксисом</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

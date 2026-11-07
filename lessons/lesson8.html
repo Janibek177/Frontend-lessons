@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 8: Введение в CSS</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 8: Введение в CSS</h1>
+        <p>Cascading Style Sheets - стилизация веб-страниц</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Что такое CSS?</h3>
+        <p>CSS (Cascading Style Sheets) - это язык стилей, который описывает внешний вид HTML элементов. С помощью CSS можно изменять цвета, шрифты, размеры, расположение элементов и многое другое.</p>
+
+        <h3>Три способа подключения CSS:</h3>
+
+        <h3>1. Inline CSS (в строке)</h3>
+        <div class="code-block">
+            <code>&lt;h1 style="color: red; font-size: 24px;"&gt;Заголовок&lt;/h1&gt;</code>
+        </div>
+
+        <h3>2. Internal CSS (внутренний)</h3>
+        <div class="code-block">
+            <code>&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h1 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 24px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br>
+&lt;/head&gt;</code>
+        </div>
+
+        <h3>3. External CSS (внешний) - Рекомендуется!</h3>
+        <div class="code-block">
+            <code>&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>
+&lt;/head&gt;</code>
+        </div>
+
+        <h3>Синтаксис CSS:</h3>
+        <div class="code-block">
+            <code>селектор {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;свойство: значение;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;другое-свойство: другое-значение;<br>
+}</code>
+        </div>
+
+        <h3>Пример:</h3>
+        <div class="code-block">
+            <code>h1 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: #ff0000;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 32px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+}</code>
+        </div>
+
+        <div class="example">
+            <p><strong>h1</strong> - селектор (выбирает элемент)</p>
+            <p><strong>color</strong> - свойство</p>
+            <p><strong>#ff0000</strong> - значение (красный цвет)</p>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте HTML файл и внешний CSS файл</p>
+            <p>2. Подключите CSS к HTML через тег link</p>
+            <p>3. Измените цвет заголовка на красный</p>
+            <p>4. Измените цвет фона страницы на черный</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 2: Текстовые элементы</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #ff0000;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: #cc0000;
+            transform: translateX(-5px);
+        }
+        .code-block {
+            background: #0a0a0a;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .code-block code {
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .example {
+            background: #1a1a1a;
+            border-left: 4px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        h3 {
+            color: #ff0000;
+            margin-top: 30px;
+        }
+        .demo {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 2: Текстовые элементы</h1>
+        <p>Работа с текстом в HTML</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Заголовки (h1-h6)</h3>
+        <p>HTML предоставляет 6 уровней заголовков. H1 - самый важный, H6 - наименее важный.</p>
+
+        <div class="code-block">
+            <code>&lt;h1&gt;Заголовок первого уровня&lt;/h1&gt;<br>
+&lt;h2&gt;Заголовок второго уровня&lt;/h2&gt;<br>
+&lt;h3&gt;Заголовок третьего уровня&lt;/h3&gt;<br>
+&lt;h4&gt;Заголовок четвертого уровня&lt;/h4&gt;<br>
+&lt;h5&gt;Заголовок пятого уровня&lt;/h5&gt;<br>
+&lt;h6&gt;Заголовок шестого уровня&lt;/h6&gt;</code>
+        </div>
+
+        <div class="demo">
+            <h1>Заголовок первого уровня</h1>
+            <h2>Заголовок второго уровня</h2>
+            <h3>Заголовок третьего уровня</h3>
+            <h4>Заголовок четвертого уровня</h4>
+            <h5>Заголовок пятого уровня</h5>
+            <h6>Заголовок шестого уровня</h6>
+        </div>
+
+        <h3>Параграфы (p)</h3>
+        <p>Тег &lt;p&gt; используется для создания параграфов текста.</p>
+
+        <div class="code-block">
+            <code>&lt;p&gt;Это первый параграф.&lt;/p&gt;<br>
+&lt;p&gt;Это второй параграф.&lt;/p&gt;</code>
+        </div>
+
+        <h3>Форматирование текста</h3>
+        <div class="example">
+            <p><strong>&lt;strong&gt;</strong> или <strong>&lt;b&gt;</strong> - <strong>жирный текст</strong></p>
+            <p><strong>&lt;em&gt;</strong> или <strong>&lt;i&gt;</strong> - <em>курсивный текст</em></p>
+            <p><strong>&lt;u&gt;</strong> - <u>подчеркнутый текст</u></p>
+            <p><strong>&lt;mark&gt;</strong> - <mark style="background: yellow; color: black;">выделенный текст</mark></p>
+            <p><strong>&lt;del&gt;</strong> - <del>зачеркнутый текст</del></p>
+            <p><strong>&lt;small&gt;</strong> - <small>маленький текст</small></p>
+        </div>
+
+        <div class="code-block">
+            <code>&lt;p&gt;Это &lt;strong&gt;жирный&lt;/strong&gt; текст.&lt;/p&gt;<br>
+&lt;p&gt;Это &lt;em&gt;курсивный&lt;/em&gt; текст.&lt;/p&gt;<br>
+&lt;p&gt;Это &lt;u&gt;подчеркнутый&lt;/u&gt; текст.&lt;/p&gt;</code>
+        </div>
+
+        <h3>Перенос строки и горизонтальная линия</h3>
+        <div class="example">
+            <p><strong>&lt;br&gt;</strong> - перенос строки (одиночный тег)</p>
+            <p><strong>&lt;hr&gt;</strong> - горизонтальная линия (одиночный тег)</p>
+        </div>
+
+        <div class="code-block">
+            <code>&lt;p&gt;Первая строка&lt;br&gt;Вторая строка&lt;/p&gt;<br>
+&lt;hr&gt;<br>
+&lt;p&gt;Текст после линии&lt;/p&gt;</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте страницу о себе с заголовком H1</p>
+            <p>2. Добавьте несколько параграфов с информацией</p>
+            <p>3. Используйте жирный и курсивный текст для выделения важных слов</p>
+            <p>4. Добавьте горизонтальную линию между разделами</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Уроки веб-разработки</p>
+    </footer>
+</body>
+</html>

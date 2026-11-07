@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 4: Списки</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        .demo { background: #2a2a2a; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 4: Списки</h1>
+        <p>Маркированные и нумерованные списки</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Маркированные списки (ul)</h3>
+        <p>Используются для создания списков без нумерации.</p>
+
+        <div class="code-block">
+            <code>&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Первый пункт&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Второй пункт&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Третий пункт&lt;/li&gt;<br>
+&lt;/ul&gt;</code>
+        </div>
+
+        <div class="demo">
+            <ul>
+                <li>Первый пункт</li>
+                <li>Второй пункт</li>
+                <li>Третий пункт</li>
+            </ul>
+        </div>
+
+        <h3>Нумерованные списки (ol)</h3>
+        <p>Используются для создания пронумерованных списков.</p>
+
+        <div class="code-block">
+            <code>&lt;ol&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Шаг первый&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Шаг второй&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Шаг третий&lt;/li&gt;<br>
+&lt;/ol&gt;</code>
+        </div>
+
+        <div class="demo">
+            <ol>
+                <li>Шаг первый</li>
+                <li>Шаг второй</li>
+                <li>Шаг третий</li>
+            </ol>
+        </div>
+
+        <h3>Вложенные списки</h3>
+        <p>Списки можно вкладывать друг в друга.</p>
+
+        <div class="code-block">
+            <code>&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Фрукты<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Яблоко&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Банан&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Овощи&lt;/li&gt;<br>
+&lt;/ul&gt;</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте список покупок (маркированный)</p>
+            <p>2. Создайте рецепт с шагами (нумерованный)</p>
+            <p>3. Сделайте вложенный список с категориями</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>

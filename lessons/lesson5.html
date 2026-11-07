@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 5: Таблицы</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .lesson-content { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .back-btn { display: inline-block; background: #ff0000; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-bottom: 30px; font-weight: bold; transition: all 0.3s; }
+        .back-btn:hover { background: #cc0000; transform: translateX(-5px); }
+        .code-block { background: #0a0a0a; border: 2px solid #ff0000; border-radius: 8px; padding: 20px; margin: 20px 0; overflow-x: auto; }
+        .code-block code { color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px; }
+        .example { background: #1a1a1a; border-left: 4px solid #ff0000; padding: 20px; margin: 20px 0; }
+        h3 { color: #ff0000; margin-top: 30px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ff0000; padding: 10px; text-align: left; }
+        th { background: #2a0000; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 5: Таблицы</h1>
+        <p>Создание таблиц в HTML</p>
+    </header>
+
+    <div class="lesson-content">
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+
+        <h3>Основы таблиц</h3>
+        <p>Таблицы создаются с помощью тегов table, tr (строка), td (ячейка), th (заголовок).</p>
+
+        <div class="code-block">
+            <code>&lt;table&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Имя&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Возраст&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Иван&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;</code>
+        </div>
+
+        <table>
+            <tr>
+                <th>Имя</th>
+                <th>Возраст</th>
+                <th>Город</th>
+            </tr>
+            <tr>
+                <td>Иван</td>
+                <td>25</td>
+                <td>Москва</td>
+            </tr>
+            <tr>
+                <td>Мария</td>
+                <td>22</td>
+                <td>Санкт-Петербург</td>
+            </tr>
+        </table>
+
+        <h3>Объединение ячеек</h3>
+        <div class="example">
+            <p><strong>colspan</strong> - объединение по горизонтали</p>
+            <p><strong>rowspan</strong> - объединение по вертикали</p>
+        </div>
+
+        <div class="code-block">
+            <code>&lt;td colspan="2"&gt;Объединенная ячейка&lt;/td&gt;<br>
+&lt;td rowspan="2"&gt;Высокая ячейка&lt;/td&gt;</code>
+        </div>
+
+        <h3>Практическое задание:</h3>
+        <div class="example">
+            <p>1. Создайте таблицу с расписанием уроков</p>
+            <p>2. Добавьте заголовки столбцов</p>
+            <p>3. Попробуйте объединить несколько ячеек</p>
+        </div>
+
+        <a href="../index.html" class="back-btn">← Назад к урокам</a>
+    </div>
+
+    <footer><p>© 2026 Уроки веб-разработки</p></footer>
+</body>
+</html>
